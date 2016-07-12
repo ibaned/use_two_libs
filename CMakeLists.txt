@@ -16,7 +16,9 @@ set(CMAKE_BUILD_WITH_INSTALL_RPATH False)
 # which point to directories outside the build tree to the install RPATH
 set(CMAKE_INSTALL_RPATH_USE_LINK_PATH True)
 
-find_package(two_libs 0.5.0 REQUIRED)
+set(two_libs_PREFIX "" CACHE STRING "two_libs install")
+
+find_package(two_libs 0.1.0 REQUIRED PATHS ${two_libs_PREFIX})
 
 add_executable(use_two_libs use_two_libs.c)
 target_include_directories(use_two_libs PRIVATE ${two_libs_INCLUDE_DIRS})
