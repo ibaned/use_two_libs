@@ -21,4 +21,4 @@ set(two_libs_PREFIX "" CACHE STRING "two_libs install")
 find_package(two_libs 0.1.0 REQUIRED PATHS ${two_libs_PREFIX})
 
 add_executable(use_two_libs use_two_libs.c)
-target_link_libraries(use_two_libs mult_nums)
+target_link_libraries(use_two_libs two_libs)
